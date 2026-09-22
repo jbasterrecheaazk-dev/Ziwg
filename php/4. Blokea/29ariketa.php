@@ -27,7 +27,7 @@
                 $prezioak = array('24', '35', '40', '23', '35');
                 for ($i = 0; $i < count($prezioak); $i++) {
                 echo "<th>";
-                echo "Prezio erreala:" . $prezioak[$i] <br>;
+                echo "Prezio erreala:" . $prezioak[$i] . "<br>";
                 echo "Prezioa beherapenekin:" . ($prezioak[$i] * 20) / 100;
                 $prezioak[$i] = ($prezioak[$i] * 20) / 100;
                 echo "</th>";
