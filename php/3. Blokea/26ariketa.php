@@ -1,21 +1,21 @@
 <?php
 if (isset($_GET["N"])) {
-    $number = $_GET["N"];
-    for ($j=0; $j < $number; $j++) {
-        $lehena = true;
-
-    for ($i = 2; $i < $j; $i++) {
-        if ($j % $i == 0) {
-            $lehena = false;
-            break;
+function lehena($zenbakia) {
+    if ($zenbakia < 2) {
+        return false;
+    }
+    $root = sqrt($zenbakia);
+    for ($i=0; $i < $root; $i++) { 
+        if ($zenbakia % $i == 0) {
+            return false;
+            }
+        }
+        return true;
+    }
+    for ($i=0; $i < $_GET["N"]; $i++) { 
+        if (lehena($i)) {
+            echo $i;
         }
     }
-
-    if ($lehena) {
-        echo $j . " Zenbakia lehena da." . "<br>";
-    } else {
-        echo $j . "Zenbakia ez da lehena." . "<br>";
-    }
-    }  
 }
 ?>
