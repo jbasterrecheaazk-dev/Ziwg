@@ -1,5 +1,3 @@
 <?php
-if (condition) {
-    # code...
-}
+
 ?>
