@@ -1,8 +1,9 @@
 <?php
+    class IrudiGeometrikoa {
     private $izena;
     private $kolorea;
 
-    function__construct() {
+    function __construct() {
     }
     public function getIzena() {
         return $this->izena;
@@ -19,4 +20,5 @@
     public function idatzi() {
         echo "Irudi geometriko bat marrazten da: " . $this->izena . " kolorearekin: " . $this->kolorea;
     }
+}
 ?>

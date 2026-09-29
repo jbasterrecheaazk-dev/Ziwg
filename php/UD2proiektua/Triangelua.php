@@ -1,7 +1,7 @@
 <?php
     class Triangelua extends IrudiGeometrikoa {
         private $altuera;
-        private $oinarria;
+        private $oinarria; 
 
         public function getAltuera() {
             return $this->altuera;
@@ -17,7 +17,7 @@
         }
         public function idatzi() {
             parent::idatzi();
-            echo "Triangelu bat marrazten da: " . $this->izena . " kolorearekin: " . $this->kolorea . ", altuera: " . $this->altuera . ", oinarria: " . $this->oinarria;
+            echo "Triangelu bat marrazten da: " . $this->getIzena() . " kolorearekin: " . $this->getKolorea() . ", altuera: " . $this->getAltuera() . ", oinarria: " . $this->getOinarria();
         }
         public function kalkulatuAzalera() {
             echo "Azalera: " . ($this->altuera * $this->oinarria) / 2;
