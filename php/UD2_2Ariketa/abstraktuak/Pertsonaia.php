@@ -1,9 +1,9 @@
 <?php
-class Pertsonaia {
-    private $izena;
-    private $biziPuntuak;
-    private $indarra;
-    private $arintasuna;
+abstract class Pertsonaia {
+    private String $izena;
+    private int $biziPuntuak;
+    private int $indarra;
+    private int $arintasuna;
 function __construct() {
     }
     public function getIzena() {
@@ -32,8 +32,8 @@ function __construct() {
     }
    abstract public function mugitu(): string;
    abstract public function erasoEgin(): int;
-   public function minaJaso(mina: int) {
-    $biziPuntuak = $biziPuntuak - mina;
+   public function minaJaso(int $mina) {
+        setbiziPuntuak($getbiziPuntuak() - $mina);
    }
 }
 ?>
