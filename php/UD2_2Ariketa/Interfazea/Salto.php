@@ -1,5 +1,5 @@
 <?php
-class Salto {
-    public function 
+interface Salto {
+    public function saltoEgin(): int;
 }
 ?>
