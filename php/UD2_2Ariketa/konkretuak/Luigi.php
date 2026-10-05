@@ -1,4 +1,6 @@
 <?php
+include ("Pertsonaia.php");
+include ("Salto.php");
 class Luigi extends Pertsonaia implements Salto {
     private $gaitasunBerezia = "Sua bota";
    public function getgaitasunBerezia() {
