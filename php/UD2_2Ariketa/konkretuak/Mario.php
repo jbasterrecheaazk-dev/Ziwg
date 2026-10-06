@@ -1,6 +1,6 @@
 <?php
-include ("Pertsonaia.php");
-include ("Salto.php");
+//include ("../abstraktuak/Pertsonaia.php");
+//include ("Salto.php");
 class Mario extends Pertsonaia implements Salto {
     private $gaitasunBerezia = "Tamaina";
     public function getgaitasunBerezia() {
@@ -12,7 +12,7 @@ class Mario extends Pertsonaia implements Salto {
     public function mugitu(): string {
         return "Mario mugitu da.";
     }
-    public function erasoEgin(): string {
+    public function erasoEgin(): int {
         return getindarra();
     }
     public function saltoEgin(): int {

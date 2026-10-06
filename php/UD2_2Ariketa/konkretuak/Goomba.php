@@ -11,8 +11,12 @@ class Goomba extends Etsaia {
     public function mugitu(): string {
         return "Goomba mugitu da.";
     }
-    public function erasoEgin(): string{
-        return getboterea();
+    public function erasoEgin(): int{
+        $ergindakoMina = $this->getarintasuna();
+        if ($this->getazkartasuna()) {
+            $ergindakoMina = $this->getarintasuna() * $this->getboterea();
+        }
+        return $ergindakoMina;
     }
 }
 ?>

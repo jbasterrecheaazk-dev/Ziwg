@@ -1,6 +1,6 @@
 <?php
 class Koopa extends Etsaia {
-    private boolean $oskolBerdeaDa;
+    private bool $oskolBerdeaDa;
 
      public function getoskolBerdeaDa() {
         return $this->oskolBerdeaDa;
@@ -9,16 +9,15 @@ class Koopa extends Etsaia {
         $this->oskolBerdeaDa = $oskolBerdeaDa;
     }
 
-    public function mugitu() {
+    public function mugitu(): string {
         return "Koopa mugitu da";
     }
-    public function erasoEgin(): string{
-        if (oskolBerdeaDa) {
-            arintasuna * 2;
-        } else {
-            arintasuna;
+    public function erasoEgin(): int {
+        $ergindakoMina = $this->getarintasuna();
+        if ($this->getoskolBerdeaDa()) {
+            $ergindakoMina = $this->getarintasuna() * 2;
         }
-        return getboterea();
+        return $ergindakoMina;
     }
 }
 ?>
