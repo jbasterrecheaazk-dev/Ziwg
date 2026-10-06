@@ -18,7 +18,6 @@ class Koopa extends Etsaia {
         } else {
             arintasuna;
         }
-        
         return getboterea();
     }
 }

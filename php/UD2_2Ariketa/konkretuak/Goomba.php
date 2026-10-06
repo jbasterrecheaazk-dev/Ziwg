@@ -12,7 +12,6 @@ class Goomba extends Etsaia {
         return "Goomba mugitu da.";
     }
     public function erasoEgin(): string{
-        
         return getboterea();
     }
 }

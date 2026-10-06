@@ -1,9 +1,7 @@
 <?php
-    
     include("IrudiGeometrikoa.php");
     include("Triangelua.php");
-
-
+    
     $irudi = new IrudiGeometrikoa();
     $irudi->setIzena("A");
     $irudi->setKolorea("urdina");
