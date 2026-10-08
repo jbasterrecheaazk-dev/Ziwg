@@ -13,10 +13,10 @@ class Mario extends Pertsonaia implements Salto {
         return "Mario mugitu da.";
     }
     public function erasoEgin(): int {
-        return getindarra();
+        return $this->getindarra();
     }
     public function saltoEgin(): int {
-        return getindarra() * getarintasuna();
+        return $this->getindarra() * $this->getarintasuna();
     }
 }
 ?>

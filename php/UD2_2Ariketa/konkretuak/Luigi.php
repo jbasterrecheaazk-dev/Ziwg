@@ -4,6 +4,7 @@ include ("Pertsonaia.php");
 include ("Salto.php");*/
 class Luigi extends Pertsonaia implements Salto {
     private $gaitasunBerezia = "Sua bota";
+    
    public function getgaitasunBerezia() {
         return $this->getgaitasunBerezia;
     }
@@ -14,10 +15,10 @@ class Luigi extends Pertsonaia implements Salto {
         return "Luigi mugitu da.";
     }
     public function erasoEgin(): int {
-        return getindarra();
+        return $this->getindarra();
     }
     public function saltoEgin(): int {
-        return getindarra() * getarintasuna();
+        return $this->getindarra() * $this->getarintasuna();
     }
 }
 ?>
