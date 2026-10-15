@@ -6,6 +6,6 @@ if ($mysql->connect_errno) {
 $result = $mysql-> query("SELECT * FROM `ikasleak`");
 
 while ($row = $result->fe) {
-    # code...
+    
 }
 ?>
