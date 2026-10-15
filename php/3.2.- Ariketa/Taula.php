@@ -1,5 +1,5 @@
 <?php
-$mysql = new mysql("localhost","root","ikasleak");
+$mysql = new mysql("localhost","root","","ikasleak");
 if ($mysql->connect_errno) {
     echo $mysql->connect_errno . " " . $mysql->connect_error;
 }
