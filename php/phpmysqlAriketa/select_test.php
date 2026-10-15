@@ -6,7 +6,7 @@ if ($mysqli->connect_errno) {
 }
 
 /* Prestatu gaberko sententzia */
-$emaitza = $mysqli->query("SELECT * FROM test");
+$emaitza = $mysqli -> query("SELECT * FROM test");
 
 // emaitza erakutsi
 while ($row = $emaitza->fetch_assoc()) {
