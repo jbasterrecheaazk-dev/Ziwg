@@ -1,5 +1,5 @@
 <?php
-$mysql = new mysql("localhost","root","","ikasleak");
+$mysql = new mysqli("localhost","root","","ikasleak");
 if ($mysql->connect_errno) {
     echo $mysql->connect_errno . " " . $mysql->connect_error;
 }
@@ -14,4 +14,7 @@ while ($row = $result -> fetch_assoc()) {
     echo '<a href="ezabatuDatuak.php?id=' . $row['id'] . '">ezabatu</a>';
     echo '<br>';
 }
+$mysql -> close();
 ?>
+<br>
+<a href="gehituDatuak.php">gehitu</a>
