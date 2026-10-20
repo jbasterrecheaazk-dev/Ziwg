@@ -6,7 +6,7 @@ if ($mysql->connect_errno) {
 $result = $mysql-> query("SELECT * FROM `ikasleak`;");
 
 while ($row = $result -> fetch_assoc()) {
-    echo ($row['izena'] . " - " . $row['email-a'] . " - ");
+    echo ($row['izena'] . " - " . $row['email'] . " - ");
     echo '<a href="irakasgaienTaula.php?id=' . $row['id'] . '">irakasgaiak</a>';
     echo ' - ';
     echo '<a href="aldatuDatuak.php?id=' . $row['id'] . '">aldatu</a>';

@@ -7,8 +7,8 @@ if (isset($_GET['izena']) && isset($_GET['email-a'])) {
     if ($mysql -> connect_errno) {
         echo "Errorea konexioarekin: " . $mysql->connect_errno . " " . $mysql->connect_error;
     }
-    if (!($sentence = $mysqli->prepare("UPDATE ikasleak SET izena=? WHERE id=?"))) {
-        echo "Prestaketa gaizki atera da: (" . $mysqli->errno . ") " . $mysqli->error;
+    if (!($sentence = $mysql->prepare("UPDATE ikasleak SET izena=? WHERE id=?"))) {
+        echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
     }
     if (!$sentence->bind_param("is", $izena, $email)) {
     echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
