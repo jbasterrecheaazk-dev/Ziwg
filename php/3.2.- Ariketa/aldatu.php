@@ -1,7 +1,7 @@
 <?php
-if (isset($_GET['izena']) && isset($_GET['email-a'])) {
+if (isset($_GET['izena']) && isset($_GET['email'])) {
     $id = $_GET['izena'];
-    $email = $_GET['email-a'];
+    $email = $_GET['email'];
 
     $mysql = new mysqli("localhost","root","","ikasleak");
     if ($mysql -> connect_errno) {

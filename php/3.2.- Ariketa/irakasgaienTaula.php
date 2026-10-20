@@ -1,0 +1,20 @@
+<?php
+$mysql = new mysqli("localhost","root","","ikasleak");
+if ($mysql->connect_errno) {
+    echo $mysql->connect_errno . " " . $mysql->connect_error;
+}
+$result = $mysql-> query("SELECT * FROM `irakasgaiak`;");
+
+while ($row = $result -> fetch_assoc()) {
+    echo ($row['izena'] . " - " . $row['email'] . " - ");
+    echo '<a href="irakasgaienTaula.php?id=' . $row['id'] . '">irakasgaiak</a>';
+    echo ' - ';
+    echo '<a href="aldatuDatuak.php?id=' . $row['id'] . '">aldatu</a>';
+    echo ' - ';
+    echo '<a href="ezabatuDatuak.php?id=' . $row['id'] . '">ezabatu</a>';
+    echo '<br>';
+}
+$mysql -> close();
+?>
+<br>
+<a href="gehituDatuak.php">gehitu</a>
