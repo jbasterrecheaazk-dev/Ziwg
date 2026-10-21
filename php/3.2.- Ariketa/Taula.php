@@ -11,7 +11,7 @@ while ($row = $result -> fetch_assoc()) {
     echo ' - ';
     echo '<a href="aldatuDatuak.php?id=' . $row['id'] . '">aldatu</a>';
     echo ' - ';
-    echo '<a href="ezabatuDatuak.php?id=' . $row['id'] . '">ezabatu</a>';
+    echo '<a href="ezabatu.php?id=' . $row['id'] . '">ezabatu</a>';
     echo '<br>';
 }
 $mysql -> close();

@@ -10,7 +10,7 @@ if ($mysql->connect_errno) {
 if (!($sentence = $mysql->prepare("INSERT INTO ikasleak(id, izena, email) VALUES ('[value-1]', '$izena', '$email')"))) {
     echo "Error." . $mysql->connect_errno . " " . $mysql->connect_error;
 }
-if (!$sentence->bind_param("is", $izena, $email)) {
+if (!$sentence->bind_param("5", $izena, $email)) {
     echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
 }
 if (!$sentence->execute()) {
