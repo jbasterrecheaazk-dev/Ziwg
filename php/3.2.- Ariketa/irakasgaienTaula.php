@@ -6,9 +6,7 @@ if ($mysql->connect_errno) {
 $result = $mysql-> query("SELECT * FROM `irakasgaiak`;");
 
 while ($row = $result -> fetch_assoc()) {
-    echo ($row['izena'] . " - " . $row['email'] . " - ");
-    echo '<a href="irakasgaienTaula.php?id=' . $row['id'] . '">irakasgaiak</a>';
-    echo ' - ';
+    echo ($row['id'] . " - " . $row['ikasle_id'] . " - " . $row['irakasgaia'] . " - ");
     echo '<a href="aldatuDatuak.php?id=' . $row['id'] . '">aldatu</a>';
     echo ' - ';
     echo '<a href="ezabatuDatuak.php?id=' . $row['id'] . '">ezabatu</a>';

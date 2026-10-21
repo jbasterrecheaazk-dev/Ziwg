@@ -7,7 +7,7 @@ if (isset($_GET['izena']) && isset($_GET['email'])) {
 if ($mysql->connect_errno) {
     echo $mysql->connect_errno . " " . $mysql->connect_error;
 }
-if (!($sentence = $mysql->prepare("DELETE FROM `ikasleak` WHERE 0"))) {
+if (!($sentence = $mysql->prepare("DELETE FROM `ikasleak` WHERE id=?"))) {
     echo "Error." . $mysql->connect_errno . " " . $mysql->connect_error;
 }
 if (!$sentence->bind_param("is", $izena, $email)) {
