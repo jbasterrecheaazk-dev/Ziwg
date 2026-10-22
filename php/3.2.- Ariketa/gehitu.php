@@ -7,10 +7,10 @@ if (isset($_GET['izena']) && isset($_GET['email'])) {
 if ($mysql->connect_errno) {
     echo $mysql->connect_errno . " " . $mysql->connect_error;
 }
-if (!($sentence = $mysql->prepare("INSERT INTO ikasleak(id, izena, email) VALUES ('[value-1]', '$izena', '$email')"))) {
+if (!($sentence = $mysql->prepare("INSERT INTO ikasleak(izena, email) VALUES (?, ?)"))) {
     echo "Error." . $mysql->connect_errno . " " . $mysql->connect_error;
 }
-if (!$sentence->bind_param("5", $izena, $email)) {
+if (!$sentence->bind_param("ss", $izena, $email)) {
     echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
 }
 if (!$sentence->execute()) {
