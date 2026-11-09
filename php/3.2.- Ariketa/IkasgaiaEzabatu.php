@@ -17,7 +17,7 @@ if (!$sentence->execute()) {
         echo "Akatsa exekuzioan: " . $sentence->connect_errno . " " . $sentence->connect_error;
     }
 $sentence->close();
-header("Location: Taula.php");
+header("Location: irakasgaienTaula.php");
 } else {
     echo("<br>Parametroetan akatsa<br>");
 }

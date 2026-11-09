@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='main.css'>
 </head>
 <body>
-    <form action="gehitu.php">
+    <form action="IkasgaiaGehitu.php">
         <input type="text" name="izena" placeholder="izena">
         <input type="text" name="email" placeholder="email">
         <input type="submit" value="Gorde">

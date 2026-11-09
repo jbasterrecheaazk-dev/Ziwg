@@ -14,7 +14,7 @@ $mysql->close();
     <link rel='stylesheet' href='main.css'>
 </head>
 <body>
-    <form action="aldatu.php">
+    <form action="ikasgaiaAldatu.php">
         
         <!--input type="text" name="id" placeholder="id" value="<!?=$erab['id']?>" //$row['id'] -->
         <input type="text" name="izena" placeholder="izena" value="<?=$erab['izena']?>">

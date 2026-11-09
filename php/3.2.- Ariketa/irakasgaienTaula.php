@@ -15,6 +15,6 @@ while ($row = $result -> fetch_assoc()) {
 $mysql -> close();
 ?>
 <br>
-<a href="gehituDatuak.php">gehitu</a>
+<a href="gehituIkasgaiDatuak.php">gehitu</a>
 <br>
 <a href="Taula.php">itzuli</a>
