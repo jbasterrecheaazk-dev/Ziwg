@@ -7,9 +7,9 @@ $result = $mysql-> query("SELECT * FROM `irakasgaiak`;");
 
 while ($row = $result -> fetch_assoc()) {
     echo ($row['id'] . " - " . $row['ikasle_id'] . " - " . $row['irakasgaia'] . " - ");
-    echo '<a href="aldatuDatuak.php?id=' . $row['id'] . '">aldatu</a>';
+    echo '<a href="aldatuIkasgaiarenDatuak.php?id=' . $row['id'] . '">aldatu</a>';
     echo ' - ';
-    echo '<a href="ezabatuDatuak.php?id=' . $row['id'] . '">ezabatu</a>';
+    echo '<a href=IkasgaiaEzabatu.php?id=' . $row['id'] . '">ezabatu</a>';
     echo '<br>';
 }
 $mysql -> close();

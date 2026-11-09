@@ -16,7 +16,7 @@ $mysql->close();
 <body>
     <form action="aldatu.php">
         
-        <!--input type="text" name="id" placeholder="id" value="<?=$erab['id']?>" //$row['id'] -->
+        <!--input type="text" name="id" placeholder="id" value="<!?=$erab['id']?>" //$row['id'] -->
         <input type="text" name="izena" placeholder="izena" value="<?=$erab['izena']?>">
         <input type="text" name="email" placeholder="email"  value="<?=$erab['email']?>">
         <input type="submit" value="Gorde">
