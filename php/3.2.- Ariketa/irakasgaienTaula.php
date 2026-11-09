@@ -16,3 +16,5 @@ $mysql -> close();
 ?>
 <br>
 <a href="gehituDatuak.php">gehitu</a>
+<br>
+<a href="Taula.php">itzuli</a>
