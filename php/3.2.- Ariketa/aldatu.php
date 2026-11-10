@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['izena']) && isset($_GET['email']) || isset($_GET['id'])) {
+if (isset($_GET['izena']) && isset($_GET['email']) || isset($erab['id'])) {
     //&& isset($_GET['id'])
     $izena = $_GET['izena'];
     $email = $_GET['email'];
@@ -19,7 +19,7 @@ if (isset($_GET['izena']) && isset($_GET['email']) || isset($_GET['id'])) {
     if (!($sentence = $mysql->prepare("UPDATE `ikasleak` SET izena = '?',email = '?' WHERE id = ?;"))) {
         echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
     }
-    if (!$sentence->bind_param("ss", $izena, $email)) {
+    if (!$sentence->bind_param("ss", $id, $izena, $email)) {
     echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
     }
     if (!$sentence->execute()) {
