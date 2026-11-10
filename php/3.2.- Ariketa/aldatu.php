@@ -33,7 +33,7 @@ if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
         echo "Akatsa exekuzioan: " . $sentence->connect_errno . " " . $sentence->connect_error;
     }
     public static function sintaxia(string $sentence): array{
-        $mysql = new mysqli("localhost", "root", "", "3.2.- Ariketa");
+        //$mysql = new mysqli("localhost", "root", "", "3.2.- Ariketa");
         if ($mysql->connect_errno) {
             throw new Exception($sentence);
             

@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['izena']) && isset($_GET['email'])) {
+if (isset($_GET['id'])) {
     $izena = $_GET['izena'];
     $email = $_GET['email'];
 
@@ -10,7 +10,7 @@ if ($mysql->connect_errno) {
 if (!($sentence = $mysql->prepare("DELETE FROM `ikasleak` WHERE id=?"))) {
     echo "Error." . $mysql->connect_errno . " " . $mysql->connect_error;
 }
-if (!$sentence->bind_param("is", $izena, $email)) {
+if (!$sentence->bind_param("i", $id)) {
     echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
 }
 if (!$sentence->execute()) {
