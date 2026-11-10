@@ -1,16 +1,17 @@
 <?php
-if (isset($_GET['izena']) && isset($_GET['email']) || isset($erab['id'])) {
+if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
     //&& isset($_GET['id'])
     $izena = $_GET['izena'];
     $email = $_GET['email'];
-    $id = $erab['id'];
+    $id = $_GET['id'];
     /*echo($izena, $id, $email);*/
 
     $mysql = new mysqli("localhost","root","","ikasleak");
     if ($mysql -> connect_errno) {
         echo "Errorea konexioarekin: " . $mysql->connect_errno . " " . $mysql->connect_error;
     }
-    /*$result = $mysql-> query("SELECT * FROM `ikasleak`;");
+    /*
+    $result = $mysql-> query("SELECT * FROM `ikasleak`;");
     if (!($sentence = $mysql-> query("SELECT id FROM `ikasleak` WHERE 1;"))) {
         echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
     }
@@ -19,7 +20,7 @@ if (isset($_GET['izena']) && isset($_GET['email']) || isset($erab['id'])) {
     if (!($sentence = $mysql->prepare("UPDATE `ikasleak` SET izena = '?',email = '?' WHERE id = ?;"))) {
         echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
     }
-    if (!$sentence->bind_param("ss", $id, $izena, $email)) {
+    if (!$sentence->bind_param("ss", $izena, $email)) {
     echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
     }
     if (!$sentence->execute()) {
