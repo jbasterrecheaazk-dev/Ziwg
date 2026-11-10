@@ -6,12 +6,12 @@ if ($mysql->connect_errno) {
 $result = $mysql-> query("SELECT * FROM `ikasleak`;");
 
 while ($row = $result -> fetch_assoc()) {
-    echo ($row['izena'] . " - " . $row['email'] . " - ");
-    echo '<a href = "irakasgaienTaula.php?id =' . $row['id'] . '">irakasgaiak</a>';
+    echo ($row['izena'] . " - " . $row['email'] . " - " /*. $row['id']*/);
+    echo '<a href = "irakasgaienTaula.php?id=' . $row['id'] . '">irakasgaiak</a>';
     echo ' - ';
-    echo '<a href = "aldatuDatuak.php?id = ' . $row['id'] . '">aldatu</a>';
+    echo '<a href = "aldatuDatuak.php?id=' . $row['id'] . '">aldatu</a>';
     echo ' - ';
-    echo '<a href = "ezabatu.php?id = ' . $row['id'] . '">ezabatu</a>';
+    echo '<a href = "ezabatu.php?id=' . $row['id'] . '">ezabatu</a>';
     echo '<br>';
 }
 $mysql -> close();

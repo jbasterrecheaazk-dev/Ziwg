@@ -1,7 +1,8 @@
 <?php
 $id=$_GET['id'];
 $mysql = new mysqli("localhost","root","","ikasleak");
-$emaitza = $mysql->query("select * from ikasleak where id=" .$id);
+$emaitza = $mysql->query("SELECT * FROM irakasgaiak WHERE id=" . $id . ";");
+//$emaitza = $mysql->query("select * from ikasleak where id=" .$id);
 $erab = $emaitza->fetch_assoc();
 $mysql->close();
 ?>
