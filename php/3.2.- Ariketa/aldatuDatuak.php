@@ -1,7 +1,7 @@
 <?php
 $id = $_GET['id'];
 $mysql = new mysqli("localhost","root","","ikasleak");
-$emaitza = $mysql->query("SELECT * FROM irakasgaiak WHERE id=" . $id . ";");
+$emaitza = $mysql->query("SELECT * FROM ikasleak WHERE id=" . $id . ";");
 $erab = $emaitza->fetch_assoc();
 $mysql->close();
 ?>
@@ -17,7 +17,7 @@ $mysql->close();
 
     <form action="aldatu.php">
         <!-- //$row['id']-->
-        <input type="text" name="id" placeholder="id" value="<?=$erab['id']?>">
+        <!--input type="text" name="id" placeholder="id" value="<?=$erab['id']?>"-->
         <input type="text" name="izena" placeholder="izena" value="<?=$erab['izena']?>">
         <input type="text" name="email" placeholder="email"  value="<?=$erab['email']?>">
         <input type="submit" value="Gorde">
