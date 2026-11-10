@@ -8,8 +8,8 @@
 </head>
 <body>
     <form action="gehitu.php">
-        <input type="text" name="izena" placeholder="izena">
-        <input type="text" name="email" placeholder="email">
+        <input type="text" name="ikasle_id" placeholder="ikasle_id">
+        <input type="text" name="irakasgaia" placeholder="irakasgaia">
         <input type="submit" value="Gorde">
     </form>
     <!--

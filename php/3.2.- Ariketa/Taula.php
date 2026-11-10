@@ -7,14 +7,14 @@ $result = $mysql-> query("SELECT * FROM `ikasleak`;");
 
 while ($row = $result -> fetch_assoc()) {
     echo ($row['izena'] . " - " . $row['email'] . " - ");
-    echo '<a href="irakasgaienTaula.php?id=' . $row['id'] . '">irakasgaiak</a>';
+    echo '<a href = "irakasgaienTaula.php?id =' . $row['id'] . '">irakasgaiak</a>';
     echo ' - ';
-    echo '<a href="aldatuDatuak.php?id=' . $row['id'] . '">aldatu</a>';
+    echo '<a href = "aldatuDatuak.php?id = ' . $row['id'] . '">aldatu</a>';
     echo ' - ';
-    echo '<a href="ezabatu.php?id=' . $row['id'] . '">ezabatu</a>';
+    echo '<a href = "ezabatu.php?id = ' . $row['id'] . '">ezabatu</a>';
     echo '<br>';
 }
 $mysql -> close();
 ?>
 <br>
-<a href="gehituDatuak.php">gehitu</a>
+<a href = "gehituDatuak.php">gehitu</a>

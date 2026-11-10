@@ -1,16 +1,16 @@
 <?php
-if (isset($_GET['izena']) && isset($_GET['email'])) {
-    $izena = $_GET['izena'];
-    $email = $_GET['email'];
+if (isset($_GET['ikasle_id']) && isset($_GET['irakasgaia'])) {
+    $ikasle_id = $_GET['ikasle_id'];
+    $irakasgaia = $_GET['irakasgaia'];
 
     $mysql = new mysqli("localhost","root","","ikasleak");
 if ($mysql->connect_errno) {
     echo $mysql->connect_errno . " " . $mysql->connect_error;
 }
-if (!($sentence = $mysql->prepare("DELETE FROM `ikasleak` WHERE id=?"))) {
+if (!($sentence = $mysql->prepare("DELETE FROM `irakasgaiak` WHERE ikasle_id=? AND irakasgaia=?"))) {
     echo "Error." . $mysql->connect_errno . " " . $mysql->connect_error;
 }
-if (!$sentence->bind_param("is", $izena, $email)) {
+if (!$sentence->bind_param("is", $ikasle_id, $irakasgaia)) {
     echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
 }
 if (!$sentence->execute()) {
