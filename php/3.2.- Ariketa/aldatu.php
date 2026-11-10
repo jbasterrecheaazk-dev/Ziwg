@@ -4,7 +4,8 @@ if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
     $izena = $_GET['izena'];
     $email = $_GET['email'];
     $id = $_GET['id'];
-    /*echo($izena, $id, $email);*/
+    
+    //echo("<br>$izena, $id, $email<br>");
 
     $mysql = new mysqli("localhost","root","","ikasleak");
     if ($mysql -> connect_errno) {
