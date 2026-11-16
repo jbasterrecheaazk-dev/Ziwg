@@ -22,8 +22,19 @@ if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
         echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
     }
     UPDATE `ikasleak` SET `id`='[value-1]',`izena`='[value-2]',`email`='[value-3]' WHERE 1
-    UPDATE `ikasleak` SET `izena` = ?, `email` = ? WHERE id = ?;*/
-    if (!($sentence = $mysql->prepare("UPDATE `ikasleak` SET `izena`=?,`email`=? WHERE id=?;"))) {
+    UPDATE `ikasleak` SET `izena` = ?, `email` = ? WHERE id = ?;
+*/
+    public function eguneratu(int $id, string $izena, string $email): void {
+        try {
+            Ikaslea::eguneratu($id, $izena, $email);
+            $this->bistaratu();
+        } catch (Exception $e) {
+            echo "Errorea gertatu da: " . $e->getMessage();
+        }        
+    }
+
+    /*
+    if (!($sentence = $mysql->prepare("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;"))) {
         echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
     }
     if (!$sentence->bind_param("ssi", $izena, $email, $id)) {
@@ -39,6 +50,7 @@ if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
             
         }
     }
+    */
     $sentence->close();
 /*
 $alerta = "";
