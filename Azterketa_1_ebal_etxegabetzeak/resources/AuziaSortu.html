@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <title>Etxegabetze-kasua erregistratu</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f4f6f9; }
+        .form-card { background: white; padding: 25px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { background: #27ae60; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h2>Auzia juridiko berria erregistratu</h2>
+    <form action="index.php?action=auziaGorde" method="POST">
+        <div class="form-group">
+            <label for="familia">Kaltetutako familia:</label>
+            <input type="text" id="familia" name="kaltetutako_familia" required>
+        </div>
+
+        <div class="form-group">
+            <label for="helbidea">Etxebizitzaren helbidea:</label>
+            <input type="text" id="helbidea" name="etxebizitza_helbidea" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hiria">Hiria:</label>
+            <input type="text" id="hiria" name="hiria" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gastuak">Aurreikusitako lege-gastuak (€):</label>
+            <input type="number" step="0.01" id="gastuak" name="aurreikusitako_lege_gastuak" required>
+        </div>
+
+        <div class="form-group">
+            <label for="egoera">Hasierako egoera:</label>
+            <select id="egoera" name="egoera">
+                <option value="Prozesuan">Prozesuan</option>
+                <option value="Etenda">Etenda</option>
+                <option value="Geldituta">Geldituta</option>
+                <option value="Amaituta">Amaituta</option>
+            </select>
+        </div>
+
+        <button type="submit">Kasua gorde</button>
+        <a href="index.php">Utzi</a>
+    </form>
+</div>
+
+</body>
+</html>
