@@ -1,5 +1,6 @@
 <?php
-if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
+//class ikasleakUpdate {
+    if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
     //&& isset($_GET['id'])
     $izena = $_GET['izena'];
     $email = $_GET['email'];
@@ -23,8 +24,8 @@ if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
     }
     UPDATE `ikasleak` SET `id`='[value-1]',`izena`='[value-2]',`email`='[value-3]' WHERE 1
     UPDATE `ikasleak` SET `izena` = ?, `email` = ? WHERE id = ?;
-*/
-    public function eguneratu(int $id, string $izena, string $email): void {
+
+    function eguneratu(int $id, string $izena, string $email): void {
         try {
             Ikaslea::eguneratu($id, $izena, $email);
             $this->bistaratu();
@@ -32,8 +33,7 @@ if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
             echo "Errorea gertatu da: " . $e->getMessage();
         }        
     }
-
-    /*
+        */    
     if (!($sentence = $mysql->prepare("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;"))) {
         echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
     }
@@ -43,6 +43,7 @@ if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
     if (!$sentence->execute()) {
         echo "Akatsa exekuzioan: " . $sentence->connect_errno . " " . $sentence->connect_error;
     }
+    /*
     public static function sintaxia(string $sentence): array{
         //$mysql = new mysqli("localhost", "root", "", "3.2.- Ariketa");
         if ($mysql->connect_errno) {
@@ -50,9 +51,9 @@ if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
             
         }
     }
-    */
+    
     $sentence->close();
-/*
+
 $alerta = "";
 if (isset($_GET['status'])) {
     if ($_GET['status'] == 'ok') {
@@ -64,12 +65,16 @@ if (isset($_GET['status'])) {
 
  echo $alerta; 
     
-    echo $sentence;*/
+    echo $sentence;
+    */
     header("Location: Taula.php");
 } else {
     echo("<br>Parametroetan akatsa<br>");
-    /*echo ("<script>alert ("Parametroetan akatsa");</script>");*/
-    /*$sentence->close();*/
+    /*
+    echo ("<script>alert ("Parametroetan akatsa");</script>");
+    $sentence->close();
+    */
     header("Location: Taula.php");
 }
+//}
 ?>
