@@ -15,6 +15,7 @@ while ($row = $result -> fetch_assoc()) {
     echo '<br>';
 }
 $mysql -> close();
+//https://github.com/aiza-fp/vscode/tree/main/UD3/3.1_ariketa
 ?>
 <br>
 <a href = "gehituDatuak.php">gehitu</a>

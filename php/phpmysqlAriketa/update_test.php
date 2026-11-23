@@ -33,7 +33,4 @@ if (isset($_GET['id']) && isset($_GET['izena'])) {
     echo("<br>Parametroetan akatsa<br>");
     
 }
-
-
-
 ?>
