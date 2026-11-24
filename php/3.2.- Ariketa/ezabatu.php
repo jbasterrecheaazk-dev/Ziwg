@@ -1,8 +1,10 @@
 <?php
 if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    /*
     $izena = $_GET['izena'];
     $email = $_GET['email'];
-
+    */
     $mysql = new mysqli("localhost","root","","ikasleak");
 if ($mysql->connect_errno) {
     echo $mysql->connect_errno . " " . $mysql->connect_error;
@@ -11,15 +13,22 @@ if (!($sentence = $mysql->prepare("DELETE FROM `ikasleak` WHERE id=?"))) {
     echo "Error." . $mysql->connect_errno . " " . $mysql->connect_error;
 }
 if (!$sentence->bind_param("i", $id)) {
-    echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
-}
-if (!$sentence->execute()) {
-        echo "Akatsa exekuzioan: " . $sentence->connect_errno . " " . $sentence->connect_error;
+     echo "Parametroen estekatzea gaizki atera da: (" . $sentence->errno . ") " . $sentence->error;
     }
-$sentence->close();
+    
+    if (!$sentence->execute()) {
+        echo "Akatsa exekuzioan: (" . $sentence->errno . ") " . $sentence->error;
+    }
+    
+    /* gomendagarria da itxiera esplizitua egitea */
+    $sentence->close();
 header("Location: Taula.php");
 } else {
     echo("<br>Parametroetan akatsa<br>");
+    ?>
+    <br>
+    <a href="Taula.php">itzuli</a>
+    <?php
 }
 /*
 if (isset($_GET['id'])) {
