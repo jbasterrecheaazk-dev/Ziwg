@@ -6,13 +6,19 @@
     $email = $_GET['email'];
     $id = $_GET['id'];
     
-    //echo("<br>$izena, $id, $email<br>");
+    
+    $mysql = new mysqli("localhost","root","","ikasleak");
+    $emaitza = $mysql->query("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;");
+    $erab = $emaitza->fetch_assoc();
+    $mysql->close();
 
+    //echo("<br>$izena, $id, $email<br>");
+/*
     $mysql = new mysqli("localhost","root","","ikasleak");
     if ($mysql -> connect_errno) {
         echo "Errorea konexioarekin: " . $mysql->connect_errno . " " . $mysql->connect_error;
     }
-    /*
+    
 
     josemanuel josemanuel@gmail.com
     egg egg@gmail.com
@@ -33,7 +39,7 @@
             echo "Errorea gertatu da: " . $e->getMessage();
         }        
     }
-        */    
+          
     if (!($sentence = $mysql->prepare("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;"))) {
         echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
     }
@@ -43,7 +49,7 @@
     if (!$sentence->execute()) {
         echo "Akatsa exekuzioan: " . $sentence->connect_errno . " " . $sentence->connect_error;
     }
-    /*
+    
     public static function sintaxia(string $sentence): array{
         //$mysql = new mysqli("localhost", "root", "", "3.2.- Ariketa");
         if ($mysql->connect_errno) {
