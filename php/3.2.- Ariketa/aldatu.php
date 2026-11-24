@@ -6,14 +6,28 @@
     $email = $_GET['email'];
     $id = $_GET['id'];
     
-    
+    $sql = "UPDATE ikasleak SET izena = :izena, email = :email WHERE id = :id";
+        $stmt = $pdo->prepare($sql);
+        
+        $stmt->execute([
+            'izena' => $izena,
+            'email' => $email,
+            'id'     => $id
+        ]);
+
+        return $stmt->rowCount();
+
+
+    /*
     $mysql = new mysqli("localhost","root","","ikasleak");
     $emaitza = $mysql->query("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;");
     $erab = $emaitza->fetch_assoc();
     $mysql->close();
 
     //echo("<br>$izena, $id, $email<br>");
-/*
+
+https://www.acens.com/comunicacion/wp-content/images/2017/07/crud-white-paper-acens.pdf
+
     $mysql = new mysqli("localhost","root","","ikasleak");
     if ($mysql -> connect_errno) {
         echo "Errorea konexioarekin: " . $mysql->connect_errno . " " . $mysql->connect_error;
