@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php
+<?php
 /*
 $mysql = new mysqli("localhost","root","","ikasleak");
 if ($mysql->connect_errno) {

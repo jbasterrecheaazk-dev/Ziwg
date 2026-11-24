@@ -1,24 +1,74 @@
 <?php
 //class ikasleakUpdate {
+
+if (isset($_GET['id']) && isset($_GET['izena']) && isset($_GET['email'])) {
+    try {
+    $id = $_GET['id'];
+    $izena = $_GET['izena'];
+    $email = $_GET['email'];
+
+    $mysqli = new mysqli("localhost", "root", "", "ikasleak");
+    if ($mysqli->connect_errno) {
+        echo "Akatsa MySQL konexioan: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
+    
+    /* Prestatutako sententzia, 1 fasea: prestaketa */
+    if (!($sententzia = $mysqli->prepare("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;"))) {
+        echo "Prestaketa gaizki atera da: (" . $mysqli->errno . ") " . $mysqli->error;
+    }
+    
+    /* Prestatutako sententzia, 2 fasea: estekatzea y exekuzioa */
+    if (!$sententzia->bind_param("ssi", $izena, $email, $id)) {
+        echo "Parametroen estekatzea gaizki atera da: (" . $sententzia->errno . ") " . $sententzia->error;
+    }
+    
+    if (!$sententzia->execute()) {
+        echo "Akatsa exekuzioan: (" . $sententzia->errno . ") " . $sententzia->error;
+    }
+    
+    /* gomendagarria da itxiera esplizitua egitea */
+    $sententzia->close();
+    
+    /* Prestatu gabeko sentetzia */
+//     $emaitza = $mysqli->query("SELECT * FROM test");
+//     var_dump($emaitza->fetch_all());
+    //header("Location: select_test.php");
+
+/*
     if (isset($_GET['izena']) && isset($_GET['email']) && isset($_GET['id'])) {
     //&& isset($_GET['id'])
     $izena = $_GET['izena'];
     $email = $_GET['email'];
     $id = $_GET['id'];
+
+    $mysql = new mysqli("localhost","root","","ikasleak");
+    if ($mysql -> connect_errno) {
+        echo "Errorea konexioarekin: " . $mysql->connect_errno . " " . $mysql->connect_error;
+    }
+
+    if (!($sentence = $mysql->prepare("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;"))) {
+        echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
+    }
+    if (!$sentence->bind_param("ssi", $izena, $email, $id)) {
+    echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
+    }
+    if (!$sentence->execute()) {
+        echo "Akatsa exekuzioan: " . $sentence->connect_errno . " " . $sentence->connect_error;
+    }
+
+    $sentence->close();
+
     
     $sql = "UPDATE ikasleak SET izena = :izena, email = :email WHERE id = :id";
-        $stmt = $pdo->prepare($sql);
+        $result = $mysql->prepare($sql);
         
-        $stmt->execute([
+        $result->execute([
             'izena' => $izena,
             'email' => $email,
             'id'     => $id
         ]);
-
-        return $stmt->rowCount();
-
-
-    /*
+        $mysql->close();
+    
     $mysql = new mysqli("localhost","root","","ikasleak");
     $emaitza = $mysql->query("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;");
     $erab = $emaitza->fetch_assoc();
@@ -27,12 +77,6 @@
     //echo("<br>$izena, $id, $email<br>");
 
 https://www.acens.com/comunicacion/wp-content/images/2017/07/crud-white-paper-acens.pdf
-
-    $mysql = new mysqli("localhost","root","","ikasleak");
-    if ($mysql -> connect_errno) {
-        echo "Errorea konexioarekin: " . $mysql->connect_errno . " " . $mysql->connect_error;
-    }
-    
 
     josemanuel josemanuel@gmail.com
     egg egg@gmail.com
@@ -53,17 +97,7 @@ https://www.acens.com/comunicacion/wp-content/images/2017/07/crud-white-paper-ac
             echo "Errorea gertatu da: " . $e->getMessage();
         }        
     }
-          
-    if (!($sentence = $mysql->prepare("UPDATE ikasleak  SET izena=?,email=? WHERE id=?;"))) {
-        echo "Prestaketa gaizki atera da: (" . $mysql->errno . ") " . $mysql->error;
-    }
-    if (!$sentence->bind_param("ssi", $izena, $email, $id)) {
-    echo "Error." . $sentence->connect_errno . " " . $sentence->connect_error;
-    }
-    if (!$sentence->execute()) {
-        echo "Akatsa exekuzioan: " . $sentence->connect_errno . " " . $sentence->connect_error;
-    }
-    
+
     public static function sintaxia(string $sentence): array{
         //$mysql = new mysqli("localhost", "root", "", "3.2.- Ariketa");
         if ($mysql->connect_errno) {
@@ -71,8 +105,6 @@ https://www.acens.com/comunicacion/wp-content/images/2017/07/crud-white-paper-ac
             
         }
     }
-    
-    $sentence->close();
 
 $alerta = "";
 if (isset($_GET['status'])) {
@@ -87,14 +119,29 @@ if (isset($_GET['status'])) {
     
     echo $sentence;
     */
+    
     header("Location: Taula.php");
+} catch (\Throwable $th) {
+    echo 'Caught exception: ', $th->getMessage(), "\n";
+    /*throw $th;*/
+    
+}
 } else {
-    echo("<br>Parametroetan akatsa<br>");
+
+    //echo("<br>Parametroetan akatsa<br>");
+    try {
+    throw new Exception('Parametroetan akatsa');
+} catch (Exception $e) {
+    echo 'Caught exception: ', $e->getMessage(), "\n";
+}
+    ?>
+    <br>
+    <a href="Taula.php">itzuli</a>
+    <?php
     /*
-    echo ("<script>alert ("Parametroetan akatsa");</script>");
     $sentence->close();
     */
-    header("Location: Taula.php");
+    //header("Location: Taula.php");
 }
 //}
 /*
