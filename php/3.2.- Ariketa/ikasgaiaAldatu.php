@@ -11,7 +11,7 @@ if (isset($_GET['id']) && isset($_GET['ikasle_id']) && isset($_GET['irakasgaia']
     }
     
     /* Prestatutako sententzia, 1 fasea: prestaketa */
-    if (!($sententzia = $mysqli->prepare("UPDATE `irakasgaiak` SET `id`=?,`ikasle_id`=?,`irakasgaia`=?  WHERE id=?;"))) {
+    if (!($sententzia = $mysqli->prepare("UPDATE irakasgaiak SET id=?,ikasle_id=?,irakasgaia=?  WHERE id=?;"))) {
         echo "Prestaketa gaizki atera da: (" . $mysqli->errno . ") " . $mysqli->error;
     }
     
