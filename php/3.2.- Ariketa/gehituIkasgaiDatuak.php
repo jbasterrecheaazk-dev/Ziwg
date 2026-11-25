@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <form action="gehitu.php">
+    <form action="gehituIkasgaia.php">
         <input type="text" name="ikasle_id" placeholder="ikasle_id">
         <input type="text" name="irakasgaia" placeholder="irakasgaia">
         <input type="submit" value="Gorde">
