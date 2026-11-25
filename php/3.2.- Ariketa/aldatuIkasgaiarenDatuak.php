@@ -17,7 +17,7 @@ $mysql->close();
 <body>
     
     <form action="ikasgaiaAldatu.php">    
-        <!--input type="text" name="id" placeholder="id" value="<!?=$erab['id']?>" //$row['id'] -->
+        <input type="text" name="id" placeholder="id" value="<?=$erab['id']?>" hidden>
         <input type="text" name="ikasle_id " placeholder="ikasle_id" value="<?=$erab['ikasle_id']?>">
         <input type="text" name="irakasgaia" placeholder="irakasgaia"  value="<?=$erab['irakasgaia']?>">
         <input type="submit" value="Gorde">
