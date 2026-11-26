@@ -1,4 +1,5 @@
 <?php
+//(isset($_GET['id']) && isset($_GET['izena']) && isset($_GET['email']))
 if (isset($_GET['id']) && isset($_GET['ikasle_id']) && isset($_GET['irakasgaia'])) {
     try {
     $id = $_GET['id'];
@@ -11,6 +12,7 @@ if (isset($_GET['id']) && isset($_GET['ikasle_id']) && isset($_GET['irakasgaia']
     }
     
     /* Prestatutako sententzia, 1 fasea: prestaketa */
+    //UPDATE `irakasgaiak` SET `id`='[value-1]',`ikasle_id`='[value-2]',`irakasgaia`='[value-3]' WHERE 1
     if (!($sententzia = $mysqli->prepare("UPDATE irakasgaiak SET id=?,ikasle_id=?,irakasgaia=?  WHERE id=?;"))) {
         echo "Prestaketa gaizki atera da: (" . $mysqli->errno . ") " . $mysqli->error;
     }

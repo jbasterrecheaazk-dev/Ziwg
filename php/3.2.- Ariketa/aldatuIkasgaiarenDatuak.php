@@ -15,10 +15,18 @@ $mysql->close();
     <link rel='stylesheet' href='main.css'>
 </head>
 <body>
-    
+<!--
+<form action="aldatu.php">
+         //$row['id']
+        <input type="text" name="id" placeholder="id" value=" =$erab['id'] " hidden>
+        <input type="text" name="izena" placeholder="izena" value=" =$erab['izena'] ">
+        <input type="text" name="email" placeholder="email"  value=" =$erab['email'] ">
+        <input type="submit" value="Gorde">
+    </form>
+-->
     <form action="ikasgaiaAldatu.php">    
         <input type="text" name="id" placeholder="id" value="<?=$erab['id']?>" hidden>
-        <input type="text" name="ikasle_id " placeholder="ikasle_id" value="<?=$erab['ikasle_id']?>">
+        <input type="text" name="ikasle_id" placeholder="ikasle_id" value="<?=$erab['ikasle_id']?>"hidden>
         <input type="text" name="irakasgaia" placeholder="irakasgaia"  value="<?=$erab['irakasgaia']?>">
         <input type="submit" value="Gorde">
     </form>
